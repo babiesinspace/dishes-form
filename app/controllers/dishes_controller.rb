@@ -1,4 +1,5 @@
 class DishesController < ApplicationController
+  before_action :set_dish, only: [:show, :edit, :update, :destroy]
 
   def index
     @dishes = Dish.all 
@@ -9,25 +10,43 @@ class DishesController < ApplicationController
   end 
 
   def create
-    dish = Dish.create(dish_params)
-    redirect_to dishes_path
+    if dish = Dish.create(dish_params)
+      flash[:success] = "Your dish has been added!"
+      redirect_to dishes_path
+    else 
+      flash.now[:alert] = "Your new post couldn't be created!  Please check the form."
+      render :new
+    end
   end 
 
   def show
-    @dish = Dish.find(params[:id])
+
   end 
 
   def edit  
-    @dish = Dish.find(params[:id])
+
   end
 
   def update  
-    @dish = Dish.find(params[:id])
-    @dish.update(post_params)
-    redirect_to(post_path(@dish))
+    if @dish.update_attributes(dish_params)
+      flash[:success] = "Dish updated!"
+      redirect_to(dish_path(@dish))
+    else 
+      flash.now[:alert] = "Update failed!"
+      render :edit
+    end 
+  end 
+
+  def destroy
+    @dish.destroy
+    redirect_to dishes_path
   end 
 
   private
+
+  def set_dish
+    @dish = Dish.find(params[:id])
+  end 
 
   def dish_params  
     params.require(:dish).permit(:image, :description, :name)
