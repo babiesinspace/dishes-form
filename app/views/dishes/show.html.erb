@@ -11,8 +11,10 @@
     <p class="description .col-xs-6 .col-sm-4">
       <%= @dish.description %>
     </p>
-    <div class="text-center">
+    <div class="text-center edit-links">
       <%= link_to "Cancel", dishes_path %>
+      |
+      <%= link_to "Edit Dish", edit_dish_path(@dish) %>
     </div>
   </div>
 </div>

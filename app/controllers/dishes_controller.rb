@@ -17,6 +17,16 @@ class DishesController < ApplicationController
     @dish = Dish.find(params[:id])
   end 
 
+  def edit  
+    @dish = Dish.find(params[:id])
+  end
+
+  def update  
+    @dish = Dish.find(params[:id])
+    @dish.update(post_params)
+    redirect_to(post_path(@dish))
+  end 
+
   private
 
   def dish_params  
