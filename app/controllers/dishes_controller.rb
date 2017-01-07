@@ -13,9 +13,13 @@ class DishesController < ApplicationController
     redirect_to dishes_path
   end 
 
+  def show
+    @dish = Dish.find(params[:id])
+  end 
+
   private
 
   def dish_params  
-    params.require(:dish).permit(:image, :description)
+    params.require(:dish).permit(:image, :description, :name)
   end 
 end

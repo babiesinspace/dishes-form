@@ -1,0 +1,18 @@
+<div class="dishes-wrapper row">
+  <div class="dish">
+    <div class="dish-head">
+      <div class="name .col-xs-6 .col-sm-4">
+        <%= @dish.name %>
+      </div>
+    </div>
+    <div class="image center-block">
+      <%= image_tag @dish.image.url(:medium) %>
+    </div>
+    <p class="description .col-xs-6 .col-sm-4">
+      <%= @dish.description %>
+    </p>
+    <div class="text-center">
+      <%= link_to "Cancel", dishes_path %>
+    </div>
+  </div>
+</div>
