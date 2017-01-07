@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem "paperclip"
 gem 'aws-sdk'
 gem 'simple_form'
+gem 'bootstrap-sass'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

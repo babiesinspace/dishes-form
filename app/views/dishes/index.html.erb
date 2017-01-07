@@ -1,1 +1,19 @@
 <h1>Dishes</h1>
+
+<div class="dishes-wrapper row">
+  <% @dishes.each do |dish| %>
+    <div class="dish">
+      <div class="dish-head">
+        <div class="name">
+          Dish
+        </div>
+      </div>
+      <div class="image center-block">
+        <%= link_to (image_tag dish.image.url(:medium), class:'img-responsive'), dish_path(dish) %>
+      </div>
+      <p class="description">
+        <%= dish.description %>
+      </p>
+    </div>
+  <% end %>
+</div>
