@@ -9,6 +9,8 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+
   # Show full error reports.
   config.consider_all_requests_local = true
 
@@ -33,6 +35,7 @@ Rails.application.configure do
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
+
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
