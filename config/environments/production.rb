@@ -59,7 +59,7 @@ Rails.application.configure do
 
  config.paperclip_defaults = {
   storage: :s3,
-  s3_host_name: ENV["AWS_S3_HOST_NAME"],
+  s3_host_name: 'http://dishesform.s3.amazonaws.com',
   s3_credentials: {
     bucket: ENV.fetch('S3_BUCKET_NAME'),
     access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
