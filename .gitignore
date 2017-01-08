@@ -18,4 +18,3 @@
 .env
 /.env.env
 /.env
-/config/aws.yml
