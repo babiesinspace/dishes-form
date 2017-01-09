@@ -1,6 +1,6 @@
 <% if @dish.image? %>
   <div class="text-center">
-    <%= image_tag @dish.image.url(:medium) %>
+    <%= image_tag @dish.image.url(:medium), class:'img-responsive' %>
   </div>
 <% end %>
 <div class="form-wrapper">
