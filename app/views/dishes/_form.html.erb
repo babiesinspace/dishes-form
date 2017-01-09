@@ -9,13 +9,18 @@
       <%= f.input :image %>
     </div>
     <div class="form-group">
-      <%= f.input :name %>
+      <%= f.input :name, :label => 'What is the name listed on the restaurants menu? Please be exact!' %>
     </div>
     <div class="form-group text-center">
-      <%= f.input :description %>
+      <%= f.input :description, :label => 'Enter your personal comments about this dish here' %>
     </div>
     <div class="form-group text-center">
       <%= f.button :submit, class: 'btn-success' %>
     </div>
   <% end %>
 </div>
+<%= f.input :consistent, :label => 'Is this dish consistent?' %>
+<%= f.input :vegetarian, :label => 'Is this dish vegetarian?' %>
+<%= f.input :special, :label => 'Is this dish a special? i.e. not on the regular menu?' %>
+<%= f.input :location, :label => "Please input the address of this location as detailed as possible! ex: '1234 Broad Street, New York, NY 10001' " %>
+:location
