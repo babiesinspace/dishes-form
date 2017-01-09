@@ -23,4 +23,4 @@
 <%= f.input :vegetarian, :label => 'Is this dish vegetarian?' %>
 <%= f.input :special, :label => 'Is this dish a special? i.e. not on the regular menu?' %>
 <%= f.input :location, :label => "Please input the address of this location as detailed as possible! ex: '1234 Broad Street, New York, NY 10001' " %>
-:location
+<%= f.input :tast, :label => 'How would you rate JUST the taste, from 1-10 ?', input_html: { min: '0', max: '10' } %>
