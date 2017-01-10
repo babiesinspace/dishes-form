@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110005128) do
+ActiveRecord::Schema.define(version: 20170110185836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170110005128) do
     t.float    "longitude"
     t.boolean  "full_meal"
     t.float    "price"
+    t.string   "restaurant"
   end
 
 end

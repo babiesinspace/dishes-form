@@ -35,7 +35,9 @@ gem "paperclip"
 gem 'aws-sdk'
 gem 'simple_form'
 gem 'bootstrap-sass'
+gem 'mini_exiftool'
 gem 'mini_exiftool_vendored'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
