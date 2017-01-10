@@ -1,6 +1,6 @@
 class Dish < ApplicationRecord
   validates :image, :name, presence: true
-  after_post_process :save_latlong
+  # after_post_process :save_latlong
 
   has_attached_file :image, styles: { 
     thumb: '100x100>',
