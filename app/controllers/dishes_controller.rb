@@ -10,7 +10,9 @@ class DishesController < ApplicationController
   end 
 
   def create
-    if dish = Dish.create(dish_params)
+    @dish = Dish.new(dish_params)
+      binding.pry
+    if @dish.save
       flash[:success] = "Your dish has been added!"
       redirect_to dishes_path
     else 
@@ -49,6 +51,6 @@ class DishesController < ApplicationController
   end 
 
   def dish_params  
-    params.require(:dish).permit(:image, :description, :name)
+    params.require(:dish).permit(:image, :description, :name, :price, :taste, :restaurant, :full_meal, :location, :special, :vegetarian, :consistent)
   end 
 end

@@ -32,11 +32,13 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem "paperclip"
+gem 'pry-rails'
 gem 'aws-sdk'
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'mini_exiftool'
 gem 'mini_exiftool_vendored'
+gem 'dotenv-rails', groups: [:development, :test]
 
 
 # Use Capistrano for deployment
