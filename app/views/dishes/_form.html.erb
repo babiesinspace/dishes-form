@@ -1,6 +1,8 @@
+<h4>Welcome! Thank you for taking the time to fill out this form! Please fill it out CAREFULLY (we're still in beta)! And excuse the messiness - we're still learning! Our hope is to get enough data to launch a fully fledged app in just over a week! Feel free to share this with your friends! We need all the help we can get. Thank you for bringing your honesty to this project. Now.. <strong>Dish About It!</strong></h4>
+
 <% if @dish.image? %>
   <div class="text-center">
-    <%= image_tag @dish.image.url(:medium) %>
+    <%= image_tag @dish.image.url(:medium), class:'img-responsive' %>
   </div>
 <% end %>
 <div class="form-wrapper">
@@ -8,14 +10,40 @@
     <div class="form-group">
       <%= f.input :image %>
     </div>
-    <div class="form-groupr">
-      <%= f.input :name %>
+    <div class="form-group">
+      <%= f.input :name, :label => 'What is the name of this dish as listed on the restaurants menu? Please be exact!  ' %>
+    </div>
+     <div class="form-group text-center">
+      <%= f.input :price, :label => 'How much was this listed for on the menu? $', input_html: { min: '0'}  %>
+    </div> 
+    <div class="form-group text-center">
+      <%= f.input :description, as: :text, :label => 'Enter your personal comments about this dish here  ' %>
     </div>
     <div class="form-group text-center">
-      <%= f.input :description %>
-    </div>
+      <h6>Please check the boxes to answer yes..</h6>
+      <%= f.input :full_meal, :label => 'Would you consider this a full meal on its own?' %>
+    </div>  
+    <div class="form-group text-center">
+      <%= f.input :consistent, :label => '(IF YOU HAVE EATEN THIS DISH BEFORE..) Is this dish consistent?' %>
+    </div>  
+    <div class="form-group text-center">
+      <%= f.input :vegetarian, :label => 'Is this dish vegetarian?' %>
+    </div>  
+    <div class="form-group text-center">
+      <%= f.input :special, :label => 'Is this dish a special? i.e. not on the regular menu?  ' %>
+    </div>  
+    <div class="form-group text-center">
+      <%= f.input :restaurant, :label => "What is the name of the restaurant?" %>
+    </div>  
+    <div class="form-group text-center">
+      <%= f.input :location, :label => "Please input the address of this location as detailed as possible! ex: '1234 Broad Street, New York, NY 10001' " %>
+    </div>  
+    <div class="form-group text-center">
+      <%= f.input :taste, collection: (1..10), as: :radio_buttons, :label => 'How would you rate JUST the taste, from 1-10 ?'%>
+    </div>  
     <div class="form-group text-center">
       <%= f.button :submit, class: 'btn-success' %>
     </div>
   <% end %>
 </div>
+
